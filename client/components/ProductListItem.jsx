@@ -4,7 +4,7 @@ export default function ProductListItem(props) {
   const priceDivide = props.productProp.price / 100;
 
   return (
-    <div className="container" style={{ width: '18rem', height: '23rem' }}>
+    <div className="container" style={{ width: '18rem', height: '25rem' }}>
       <div className="row">
         <div className="col-md-4"></div>
         <div className="card">
