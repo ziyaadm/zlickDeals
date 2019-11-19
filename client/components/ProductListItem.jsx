@@ -10,6 +10,7 @@ export default function ProductListItem(props) {
         <div className="card">
           <img className="card-img-top" src={props.productProp.image} alt="Card image cap" />
           <div className="card-body">
+            <h5 className="card-title">{props.productProp.name}</h5>
             <h6 className="card-subtitle mb-2 text-muted">{'$' + priceDivide.toFixed(2)}</h6>
             <p className="card-text">{props.productProp.shortDescription}</p>
           </div>
