@@ -16,9 +16,10 @@ export default class ProductDetails extends React.Component {
   }
 
   render() {
+    var buttonText = '< Back to catalog';
     return (
       <div className="container" style={{ width: '18rem', height: '25rem' }}>
-        <button onClick={() => this.props.setView('catalog', {})}>Back to Catalog</button>
+        <button className= "btn btn-link" onClick={() => this.props.setView('catalog', {})}>{buttonText}</button>
         <img className="card-img-top" src={this.state.product.image} alt="Card image cap" />
         <div className="card-body">
           <h5 className="card-title">{this.state.product.name}</h5>
