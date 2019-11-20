@@ -1,7 +1,9 @@
 import React from 'react';
 
 export default function ProductListItem(props) {
-  const priceDivide = props.productProp.price / 100;
+  const priceDivide = props.product.price / 100;
+
+  this.props.setView('details', { productId: props.product.productId });
 
   return (
     <div className="container" style={{ width: '18rem', height: '25rem' }}>
