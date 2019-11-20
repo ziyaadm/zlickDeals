@@ -5,16 +5,11 @@ export default class ProductDetails extends React.Component {
     this.state = {
       product: ''
     };
-    this.getProductDetails = this.getProductDetails.bind(this);
   }
 
   componentDidMount() {
-    this.getProductDetails();
-  }
-
-  getProductDetails() {
-    // fetch(`/api/products?productId=${productId}`)
-    fetch('/api/products?productId=1')
+    const specificProduct = this.props.viewProp.productId;
+    fetch(`/api/products?productId=${specificProduct}`)
       .then(response => response.json())
       .then(data => this.setState({ product: data }))
       .catch(err => console.error('Get All Products fetch failed', err));
@@ -23,6 +18,7 @@ export default class ProductDetails extends React.Component {
   render() {
     return (
       <div className="container" style={{ width: '18rem', height: '25rem' }}>
+        <button onClick={() => this.props.setView('catalog', {})}>Back to Catalog</button>
         <img className="card-img-top" src={this.state.product.image} alt="Card image cap" />
         <div className="card-body">
           <h5 className="card-title">{this.state.product.name}</h5>
