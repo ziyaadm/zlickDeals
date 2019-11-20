@@ -20,7 +20,8 @@ if ($request['method'] === 'GET'){
               `name`,
               `price`,
               `image`,
-              `shortDescription`
+              `shortDescription`,
+              `longDescription`
             FROM `products`
                 WHERE `productId`={$matchingProduct}
     ";
