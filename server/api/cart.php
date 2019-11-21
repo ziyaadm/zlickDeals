@@ -56,17 +56,23 @@ if ($request['method'] === 'POST') {
     $products = $result->fetch_all(MYSQLI_ASSOC);
     $matchingProductResult = $products[0];
 
-    $sql2 = "
+    // unset($_SESSION['cartId']);
+    if(!$_SESSION['cartId']) {
+      $sql2 = "
       INSERT INTO `carts`(`createdAt`)
       VALUES (CURRENT_TIMESTAMP)
     ";
-    $result2 = $link->query($sql2);
-    $_SESSION['cartId'] = mysqli_insert_id($link);
+      $result2 = $link->query($sql2);
+      $_SESSION['cartId'] = mysqli_insert_id($link);
     // $insertResultId2 = mysqli_insert_id($link);
+    }
+
+    $cartId = $_SESSION['cartId'];
+
 
     $sql3 = "
       INSERT INTO `cartItems` (`cartId`,`price`,`productId`)
-      VALUES (`cartId`,{$matchingProductResult['price']},{$matchingProduct})
+      VALUES ($cartId,{$matchingProductResult['price']},{$matchingProduct})
     ";
 
     $result3 = $link->query($sql3);
