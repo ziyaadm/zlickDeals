@@ -14,9 +14,8 @@ function checkNum($productIdGiven)
     throw new ApiError('Please input a valid number', 400);
   }
 }
-
-if ($request['method'] === 'GET') {
   //if request is GET and cartid is available
+if ($request['method'] === 'GET') {
   if ((isset($_SESSION['cartId']))){
     $link = get_db_link();
     $message = check_connection($link);
@@ -39,6 +38,10 @@ if ($request['method'] === 'GET') {
       send($response);
     }
   }
+//if request is POST and productId is NOT set or INVALID
+if ((!isset($request['body']['productId'])) || checkNum($request['body']['productId'])) {
+  throw new ApiError('Please input a valid number', 400);
+}
   //if request is POST and productId is set and valid
 if ($request['method'] === 'POST') {
   if ((isset($request['body']['productId'])) && checkNum($request['body']['productId'])) {
@@ -94,9 +97,5 @@ if ($request['method'] === 'POST') {
       $matchingProductFinal
     ];
     send($response);
-  }
-  //if request is POST and productId is NOT set or INVALID
-  if ((!isset($request['body']['productId'])) || checkNum($request['body']['productId']))  {
-    throw new ApiError('Please input a valid number', 400);
   }
 }
