@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "cartItemId": 1,
     "productId": 2,
     "name": "Snuggie",
     "price": 2900,
@@ -8,7 +8,7 @@
     "shortDescription": "Super-Soft Fleece with pockets! One Size fits all Adults! Keeps you Warm & Your Hands-Free!"
   },
   {
-    "id": 2,
+    "cartItemId": 2,
     "productId": 5,
     "name": "Ostrich Pillow",
     "price": 9900,
