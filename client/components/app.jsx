@@ -35,7 +35,7 @@ export default class App extends React.Component {
       method: 'POST',
       body: JSON.stringify(product)
     }).then(response => response.json())
-      .then(data => this.setState({ cart: data }))
+      .then(data => this.setState({ cart: this.state.cart.concat(data) }))
       .catch(err => console.error('Add to cart fetch failed', err));
   }
 
