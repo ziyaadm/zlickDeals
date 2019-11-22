@@ -9,3 +9,6 @@ img {
 .mouse:hover {
     cursor: pointer;
 }
+.badge{
+  margin: 5px;
+}
