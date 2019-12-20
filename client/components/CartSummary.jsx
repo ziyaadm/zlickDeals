@@ -18,9 +18,10 @@ export default function CartSummary(props) {
         <h1>
           Cart Summary
         </h1>
-        <table>
+        <div>
           {newprodArray}
-        </table>
+        </div>
+        <button className="btn btn-link" onClick={() => props.setView('checkout', {})}>Checkout</button>
         <h1>Total Price Summary</h1>
         {totalPrice}
       </div>
