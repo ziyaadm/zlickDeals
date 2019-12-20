@@ -25,9 +25,9 @@ export default function CartSummary(props) {
         <div className="row justify-content-center">
           {newprodArray}
         </div>
-        <div className="row">
+        <div className="row justify-content-center">
           <h3>Item Total: {'$' + priceDivide.toFixed(2)}</h3>
-          <button type="button" className="btn btn-primary" onClick={() => props.setView('checkout', {})}>Checkout</button>
+          <button type="button" className="btn btn-primary ml-2" onClick={() => props.setView('checkout', {})}>Checkout</button>
         </div>
       </div>
     );

@@ -7,13 +7,31 @@ export default class CheckoutForm extends React.Component {
   }
 
   render() {
+    var buttonText = '< Back to catalog';
+
     return (
       <div>
-        <button onClick={() => this.props.setView('catalog', {})}>Back to Catalog</button>
-        Full Name: <input type="text"/>
-        Credit Card Number: <input type="number"/>
-        Shipping Address: <input type="text"/>
-        <button>Place Order</button>
+        <div className="row">
+          <div className="col-3">
+            <button className="btn btn-link" onClick={() => this.props.setView('catalog', {})}>{buttonText}</button>
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col-9">
+            Full Name: <input type="text" />
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col-9">
+            Credit Card Number: <input type="number" />
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col-9">
+            Shipping Address: <input type="text" />
+          </div>
+        </div>
+        <button type="button" className="btn btn-primary">Place Order</button>
       </div>
     );
   }
