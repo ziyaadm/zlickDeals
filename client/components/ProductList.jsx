@@ -23,10 +23,8 @@ export default class ProductList extends React.Component {
   render() {
     const productsArray = this.state.products.map((product, index) => <ProductListItem key={index} productProp={product} setView={this.props.setView}/>);
     return (
-      <div className="container col-md-9">
-        <div className="row">
-          {productsArray}
-        </div>
+      <div className="row justify-content-center">
+        {productsArray}
       </div>
     );
   }
