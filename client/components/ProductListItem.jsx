@@ -4,7 +4,7 @@ export default function ProductListItem(props) {
   const priceDivide = props.productProp.price / 100;
 
   return (
-    <div className="card col-sm-6 col-lg-3 m-4 onClick={() => props.setView('details', { productId: props.productProp.productId })}">
+    <div className="card mouse col-sm-6 col-lg-3 m-4" onClick={() => props.setView('details', { productId: props.productProp.productId })}>
       <img className="card-img-top" src={props.productProp.image} alt="Card image cap" />
       <div className="card-body">
         <h5 className="card-title">{props.productProp.name}</h5>
