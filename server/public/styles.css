@@ -1,0 +1,14 @@
+.navbar {
+color: white;
+}
+img {
+  object-fit: contain;
+  height: 200px;
+  width: 200px;
+}
+.mouse:hover {
+    cursor: pointer;
+}
+.badge{
+  margin: 5px;
+}
