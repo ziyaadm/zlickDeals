@@ -8,7 +8,7 @@
     "dev": "npm-run-all --silent --parallel dev:*",
     "dev:client": "webpack-dev-server",
     "dev:server": "php -S '0.0.0.0:9000' -t server/public -c php.ini",
-    "db:import": "php database/config.php"
+    "db:import": "php api/config.php"
   },
   "husky": {
     "hooks": {
