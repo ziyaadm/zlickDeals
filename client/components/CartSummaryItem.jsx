@@ -3,18 +3,19 @@ import React from 'react';
 export default function CartSummaryItem(props) {
   const priceDivide = props.cartItems.price / 100;
   return (
-    <div className="row border border-dark col-9 mb-2">
-      <div className="col-3">
+
+    <div className="border border-dark d-flex col-9 mb-2 flex-column text-center">
+      <div>
         <img className="" src={props.cartItems.image} alt="Card image cap" />
       </div>
-      <div className="col-6 mt-4">
+      <div className="">
         <h6>
           {props.cartItems.name}
         </h6>
         <p className="text-muted">
           {'$' + priceDivide.toFixed(2)}
         </p>
-        <p>
+        <p className="">
           {props.cartItems.shortDescription}
         </p>
       </div>

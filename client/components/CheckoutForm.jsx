@@ -10,28 +10,28 @@ export default class CheckoutForm extends React.Component {
     var buttonText = '< Back to catalog';
 
     return (
-      <div>
-        <div className="row">
-          <div className="col-3">
-            <button className="btn btn-link" onClick={() => this.props.setView('catalog', {})}>{buttonText}</button>
-          </div>
-        </div>
+      <div className="container">
+        <button className="btn btn-link" onClick={() => this.props.setView('catalog', {})}>{buttonText}</button>
         <div className="row justify-content-center">
-          <div className="col-9">
-            Full Name: <input type="text" />
-          </div>
+          <h3>
+            Checkout
+          </h3>
         </div>
-        <div className="row justify-content-center">
-          <div className="col-9">
-            Credit Card Number: <input type="number" />
-          </div>
+        <div className="form-group">
+          <label htmlFor="usr">Name:</label>
+          <input type="text" className="form-control" id="usr"/>
         </div>
-        <div className="row justify-content-center">
-          <div className="col-9">
-            Shipping Address: <input type="text" />
-          </div>
+        <div className="form-group">
+          <label htmlFor="pwd">Credit Card:</label>
+          <input type="number" className="form-control" id="pwd"/>
         </div>
-        <button type="button" className="btn btn-primary">Place Order</button>
+        <div className="form-group">
+          <label htmlFor="pwd">Shipping Address</label>
+          <textarea className="form-control" id="pwd" />
+        </div>
+        <div className="text-center">
+          <button type="button" className="btn btn-primary" onClick={() => this.props.setView('success', {})}>Place Order</button>
+        </div>
       </div>
     );
   }

@@ -4,6 +4,7 @@ import ProductList from './ProductList';
 import ProductDetails from './Product-Details';
 import CartSummary from './CartSummary';
 import CheckoutForm from './CheckoutForm';
+import Success from './Success';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -84,6 +85,12 @@ export default class App extends React.Component {
         <div>
           <Header cartItemCount={this.state.cart.length} setView={this.setView} />
           <CheckoutForm setView={this.setView} viewProp={this.state.view.params} placeOrder={this.placeOrder}/>
+        </div>);
+    } else if (this.state.view.name === 'success') {
+      return (
+        <div>
+          <Header setView={this.setView} />
+          <Success/>
         </div>);
     }
   }
