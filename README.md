@@ -22,7 +22,7 @@ Try the application live at http://zlickdeals.ziyaadcodes.com/
 - User can enter their purchase information
 
 ### Preview
-
+![](preview.gif)
 
 ### Development
 
