@@ -9,8 +9,11 @@ export default function CartSummary(props) {
 
   if (newprodArray.length < 1) {
     return (
-      <div>
-        <h1> No cart items </h1>
+      <div className="container">
+        <button className="btn btn-link" onClick={() => props.setView('catalog', {})}>{buttonText}</button>
+        <div className="vh-100 d-flex align-items-center justify-content-center">
+          <h1> No cart items </h1>
+        </div>
       </div>
     );
   } else {

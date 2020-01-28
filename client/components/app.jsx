@@ -90,7 +90,7 @@ export default class App extends React.Component {
       return (
         <div>
           <Header setView={this.setView} />
-          <Success/>
+          <Success setView={this.setView}/>
         </div>);
     }
   }
