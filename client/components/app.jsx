@@ -19,10 +19,15 @@ export default class App extends React.Component {
     this.setView = this.setView.bind(this);
     this.getCartItems = this.getCartItems.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.setEmptyCart = this.setEmptyCart.bind(this);
   }
 
   componentDidMount() {
     this.getCartItems();
+  }
+
+  setEmptyCart() {
+    this.setState({ cart: [] });
   }
 
   placeOrder(product) {
@@ -84,7 +89,7 @@ export default class App extends React.Component {
       return (
         <div>
           <Header cartItemCount={this.state.cart.length} setView={this.setView} />
-          <CheckoutForm setView={this.setView} viewProp={this.state.view.params} placeOrder={this.placeOrder}/>
+          <CheckoutForm setView={this.setView} viewProp={this.state.view.params} setEmptyCart={this.setEmptyCart} item={this.state.cart}/>
         </div>);
     } else if (this.state.view.name === 'success') {
       return (
